@@ -1,2 +1,2 @@
 # multi-form
-send multiple form with springmvc
+send multiple rows with springmvc
