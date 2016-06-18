@@ -1,6 +1,5 @@
 package example.com.multiform.app.welcome;
 
-import javafx.scene.Parent;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
