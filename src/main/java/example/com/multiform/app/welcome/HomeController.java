@@ -8,16 +8,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Model model) {
-
         return "welcome/home";
     }
 
@@ -27,17 +24,13 @@ public class HomeController {
         if (bindingResult.hasErrors()) {
             return "welcome/home";
         }
-
-        System.out.println("----------------------");
-        System.out.println(form);
-        System.out.println("----------------------");
         return "welcome/home";
     }
 
     @ModelAttribute
     public ParentForm setUpParentForm() {
         ParentForm parentForm = new ParentForm();
-        parentForm.setUserFormList(Arrays.asList(new UserForm("初期値A", "初期値B"), new UserForm("初期値C", "初期値D")));
+        parentForm.setUserFormList(Arrays.asList(new UserForm("value1", "value2"), new UserForm("value3", "value4")));
         return parentForm;
     }
 
